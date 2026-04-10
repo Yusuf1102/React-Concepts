@@ -1,8 +1,13 @@
 import React from 'react'
+import Card from './Components/Card';
+
+
 
 function App(){
   return(
-    <h1>Hello, React!</h1>
+      <div>
+          <Card></Card>
+      </div>
   )
 }
 
