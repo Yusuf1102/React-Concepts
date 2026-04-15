@@ -5,7 +5,8 @@ function App() {
  
   return (
     <div className='p-5'>
-       <Card></Card>
+       <Card text = "Know More" color = "bg-blue-600"/>
+       <Card text = "Download" color = "bg-red-600"></Card>
     </div>
   )
 }
