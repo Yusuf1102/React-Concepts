@@ -1,58 +1,29 @@
-import React, { useState } from 'react'
-import Card from './Components/Card'
-import Navbar from './Components/Navbar'
+import React,{ useRef } from 'react'
+
 
 function App() {
-    const data = [
-        {  
-            image:"https://c.saavncdn.com/984/Dhurandhar-Title-Track-From-Dhurandhar-Hindi-2025-20251203114226-500x500.jpg",
-            name:"Dhurandhar Title Track",
-            artist:"Shashwat Sachdev",
-            added:false
-        },
-        {  
-            image:"https://c.saavncdn.com/984/Dhurandhar-Title-Track-From-Dhurandhar-Hindi-2025-20251203114226-500x500.jpg",
-            name:"Gehra Hua",
-            artist:"Arijit Singh",
-            added:false
-        },
-        {  
-            image:"https://c.saavncdn.com/984/Dhurandhar-Title-Track-From-Dhurandhar-Hindi-2025-20251203114226-500x500.jpg",
-            name:"Ishq Ishq",
-            artist:"Sonu Nigam",
-            added:false
-        },
-        {  
-            image:"https://c.saavncdn.com/984/Dhurandhar-Title-Track-From-Dhurandhar-Hindi-2025-20251203114226-500x500.jpg",
-            name:"Nazar Nazar",
-            artist:"Jasmine Sandalas",
-            added:false
-        }
-    ]
-     const [songData, setSongData] =  useState(data)
-        const handleClick = (index)=>{
-            setSongData((prev)=>{
-                return prev.map((item,itemIndex)=>{
-                        if(itemIndex===index){
-                            return {...item, added:!item.added}
-                        }
-                        return item;
-                })
-            })
-        }
+    const name = useRef(null);
+    const age = useRef(null);
+    const email = useRef(null);
+
+    const handleSubmit = (details)=>{
+        details.preventDefault();
+        console.log(name.current.value,
+                    age.current.value,
+                    email.current.value
+        )
+    }
+    
+    
 
   return (
-    <>
-    <div className="w-full h-screen bg-zinc-300 ">
-        <Navbar data = {songData}/> 
-        <div className='px-20 flex gap-10 mt-10 flex-wrap'>
-                {songData.map((obj,index)=>(
-                    <Card data = {obj} handleClick={handleClick} index = {index} key = {index}/>
-            ))}           
-        </div>
-    </div>
-    </>
+        <form  className= "px-5 mt-10 border-solid "  action="" onSubmit={handleSubmit}>
+            <input ref = {name} type="text" placeholder='name' />
+            <input ref = {age}  type="text" placeholder='age' />
+            <input ref = {email} type="text" placeholder='email' />
+            <button>Submit</button>
+        </form>
   )
 }
 
-export default App 
+export default App    
