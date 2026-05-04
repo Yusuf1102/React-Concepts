@@ -15,7 +15,7 @@ const App = () => {
   };
   return 
     <div className="pt-[5%] pl-[5%]">
-          <button className="px-5 rounded py-2 bg-red-300">
+          <button onClick={getProducts} className="px-5 rounded py-2 bg-red-300">
               Call Product API
           </button>
     </div>;
