@@ -8,7 +8,7 @@ const Nav = () => {
                          isActive ? "text-red-500 font-bold":"text-gray-700" } 
                          to="/">Home</NavLink>
                 <NavLink className={({isActive})=>
-                         isActive ? "text-red-500 font-bold":"text-gray-700" }
+                          isActive ? "text-red-500 font-bold":"text-gray-700" }
                         to="/user">User</NavLink>
                 <NavLink className={({isActive})=>
                          isActive ? "text-red-500 font-bold":"text-gray-700" }

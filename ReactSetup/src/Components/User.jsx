@@ -1,17 +1,18 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 function User() {
     return (
         <div className=' w-1/2 m-auto mt-10'>
             <h1 className='text-red-200 text-5xl mb-2' >User</h1>
-
-            <p className='mb-2 text-zinc-500'>
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Repellendus, quidem iusto pariatur necessitatibus aliquam architecto tenetur
-                blanditiis et doloribus labore vel obcaecati facilis perferendis saepe?
-                Dolorem omnis eum cum voluptate!
-            </p>
-            <button className='p-3 bg-zinc-600 text-white '>Explore More</button>
+            <div className='flex w-1/2 flex-col mt-5 '>
+                <Link className='p-3 bg-red-200 text-2xl mb-3 hover:bg-red-300'
+                    to="/user/yusuf">Yusuf</Link>
+                <Link className='p-3 bg-red-200 text-2xl mb-3 hover:bg-red-300'
+                    to="/user/aayush">Aayush</Link>
+                <Link className='p-3 bg-red-200 text-2xl mb-3 hover:bg-red-300'
+                    to="/user/wasib">Wasib</Link>
+            </div>
         </div>
     )
 }
